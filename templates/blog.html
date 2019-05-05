@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <br>
+    <br>
+    <br>
   <!-- Page Content -->
   <div class="container mt-5">
 
@@ -15,7 +18,7 @@
             {% for blog in existing_blogs %}
             <!-- Blog Post -->
             <div class="card mb-4">
-              <img class="card-img-top" src="https://imgc.allpostersimages.com/img/print/u-g-PZNZ420.jpg?w=900&h=900&p=0" alt="Card image cap">
+              <img class="card-img-top" id="blog-img" src="https://s7d5.scene7.com/is/image/Specialized/inside-specialized_ambassadors?$hybris-nav$" alt="Card image cap">
               <div class="card-body">
                 <a href="/blog?id={{ blog.id }}"><h2 class="card-title">{{blog.blog_title}}</h2></a>
                 <p class="card-text">{{ blog.blog_body }}</p>

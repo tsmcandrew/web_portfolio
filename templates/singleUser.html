@@ -13,12 +13,12 @@
             <div class="col-md-8">
     
             <h1 class="my-4">for users: 
-              <small>by user <span style="font-style:italic;">{{ blog_user }}</span></small>
+              <small>by user <span style="font-style:italic; color: #64a19d;">{{ blog_user }}</span></small>
             </h1>
             {% for blog in user_blogs %}
             <!-- Blog Post -->
             <div class="card mb-4">
-              <img class="card-img-top" src="https://imgc.allpostersimages.com/img/print/u-g-PZNZ420.jpg?w=900&h=900&p=0" alt="Card image cap">
+              <img class="card-img-top" id="blog-img" src="https://i.pinimg.com/564x/2c/55/a5/2c55a5cd344156d3cfeb8b231f99700d.jpg" alt="Card image cap">
               <div class="card-body">
                 <a href="/blog?id={{ blog.id }}"><h2 class="card-title">{{blog.blog_title}}</h2></a>
                 <p class="card-text">{{ blog.blog_body }}</p>

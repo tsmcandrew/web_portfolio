@@ -332,3 +332,7 @@ a:focus, a:hover {
 footer {
   padding: 5rem 0;
 }
+
+#blog-img{
+  background: url("../img/aspen.jpg");  
+}

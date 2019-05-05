@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br>
+<br>
+<br>
+<br>
 <!-- Authors Section -->
     <div class="col-md-8 mt-5">
     
-        <h1 class="my-4">
-          <small>Authors:</small>
+        <h1 class="my-4">for users
+          <small>by users</small>
         </h1>
         {% for user in users %}
         <!-- Blog Post -->
-        <div class="card my-4 mb-4">
+        <div class="card my-4" style="margin:0px 0px;width: 300px;">
           
-          <div class="card-body my-4">
+          <div class="card-body" style="background:rgba(0,0,0,.9); margin: 0px 0px;text-align: center;">
             <a href="/blog?user={{ user.username }}">
-                <h2 class="card-title">Author: {{ user.username }}</h2>
+                <h2 class="card-title" style="margin-bottom: 0px;font-style: italic;font-size: 16px;">Author: {{ user.username }}</h2>
             </a>           
           </div>
 

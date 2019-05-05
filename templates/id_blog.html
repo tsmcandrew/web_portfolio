@@ -19,7 +19,7 @@
             
             <!-- Blog Post -->
             <div class="card mb-4">
-              
+              <img class="card-img-top" id="blog-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3CwbmmgMIjdgeuCmQPuufE1D3yQiXQAtTLTwH6yICu7FI76rw" alt="Card image cap">
               <div class="card-body">
                 <a href="/blog?id={{ blog_id }}"><h2 class="card-title">{{blog_title}}</h2></a>
                 <p class="card-text">{{ blog_body }}</p>
@@ -28,6 +28,7 @@
                 Posted on {{ blog_date }} by
                 <a href="/blog?user={{ user_name }}">{{ owner.username }}</a>
               </div>
+              
             </div>
            
         </div>
