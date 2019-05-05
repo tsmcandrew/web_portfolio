@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Blogz</title>
+        
+
+        <style>
+            .error {
+                font-style: italic;
+                color: red;
+                }
+        </style>
+       
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>t | s | Mc</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Bootstrap core CSS -->
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+        
+        <!-- Bootstrap core JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- Custom fonts for this template -->
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css' ) }}">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- Custom styles for this template -->
+        <link type=text/css href="{{ url_for('static', filename='css/grayscale.css') }}" rel="stylesheet">
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.css') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    
+        <!-- Plugin JavaScript -->
+        <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
+        <!-- Custom scripts for this template -->
+        <script src="{{ url_for('static', filename='js/grayscale.min.js') }}"></script>
+     
+    </head>
+
+<body id="page-top">
+    
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: black; position: z;">
+        
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">t | s | Mc</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/portfolio"><span style="color: #64a19d; font-style: italic;">creative</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/">Blog | Authors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/blog">Blog | Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/newpost">Blog | NewPost</a>
+                    </li>
+                    
+                    {% if 'username' in session %}
+        
+                    <li class="navbar-item">
+                        <span class="nav-link js-scroll-trigger">{{ session['username'] }}</span>
+                    </li>
+                    <li class="navbar-item" style="margin-top: 15px;">
+                        <form method="post" action="/logout">
+                            <button class="btn btn-primary js-scroll-trigger">Log Out</button>
+                        </form>
+                    </li>
+        
+                    {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+
+    </nav>
+
+    
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
+
+
+
+

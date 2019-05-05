@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <br>
+    
+
+  <!-- Page Content -->
+  <div class="container mt-5">
+
+        <div class="row">
+    
+          <!-- Blog Entries Column -->
+          <div class="col-md-8">
+    
+            <h1 class="my-4">for users
+              <small>by users</small>
+            </h1>
+            
+            <!-- Blog Post -->
+            <div class="card mb-4">
+              
+              <div class="card-body">
+                <a href="/blog?id={{ blog_id }}"><h2 class="card-title">{{blog_title}}</h2></a>
+                <p class="card-text">{{ blog_body }}</p>
+              </div>
+              <div class="card-footer text-muted">
+                Posted on {{ blog_date }} by
+                <a href="/blog?user={{ user_name }}">{{ owner.username }}</a>
+              </div>
+            </div>
+           
+        </div>
+    </div>
+
+{% endblock %}    
+

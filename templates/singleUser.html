@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<br>
+
+<!-- Page Content -->
+<div class="container mt-5">
+
+        <div class="row">
+    
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+    
+            <h1 class="my-4">for users: 
+              <small>by user <span style="font-style:italic;">{{ blog_user }}</span></small>
+            </h1>
+            {% for blog in user_blogs %}
+            <!-- Blog Post -->
+            <div class="card mb-4">
+              <img class="card-img-top" src="https://imgc.allpostersimages.com/img/print/u-g-PZNZ420.jpg?w=900&h=900&p=0" alt="Card image cap">
+              <div class="card-body">
+                <a href="/blog?id={{ blog.id }}"><h2 class="card-title">{{blog.blog_title}}</h2></a>
+                <p class="card-text">{{ blog.blog_body }}</p>
+                <a href="/blog?id={{ blog.id }}" class="btn btn-primary">Read More &rarr;</a>
+              </div>
+              <div class="card-footer text-muted">
+                Posted on {{ blog.blog_date }} by
+                <a href="/blog?user={{ blog.owner.username }}">{{ blog.owner.username }}</a>
+              </div>
+            </div>
+            {% endfor %}
+            
+    
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+              <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+    </div>
+
+<section id="about" class="about-section bg-black text-center">
+    <div class="container h-100 align-items-center mt-5">
+    <div class="row justify-content-center no-gutters mt-5 mb-5 mb-lg-0"> 
+        <div class="col-lg-6 mx-auto bg-black">
+        <div class="bg-black text-center">
+    <h3>Posts by {{ username }} {{user_id}}:</h1>
+        {% if user_blogs|length == 0 %}
+
+        <p>No blogs yet</p>
+    
+        {% else %}
+    
+            <ul class="list-group">
+    
+                {% for blog in user_blogs %}
+    
+                <li class="list-group-item">
+                    <a href="/blog?id={{ blog.id }}"> 
+                        
+                        <h4> Title: {{blog.blog_title}} </h4> 
+                            
+                    </a>
+                                        
+                    <h6> Blog Entry #: {{blog.id}} </h6>  
+                    
+                    <h6> {{ blog.blog_body }} </h6>
+                    <br /> 
+                    <br />
+                    <h6> Author: <a href='/blog?user={{ blog.owner.username }}'> {{ blog.owner.username }}</a></h6>
+                    <h6> Post Date: {{ blog.blog_date }} </h6>
+                </li>
+    
+                {% endfor %}
+                
+            </ul>
+        
+        </div>
+        </div>
+    </div>
+    </div>
+</section>  
+        {% endif %}    
+
+{% endblock %}
+

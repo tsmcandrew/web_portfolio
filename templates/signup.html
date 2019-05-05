@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sign Up Here!</h1>
+<form action="/signup" method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" name="username" type="username" value="{{ username }}">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" name="password" type="password">
+    </div>
+    <div class="form-group">
+        <label for="verify">Verify Password</label>
+        <input class="form-control" name="verify" type="password">
+    </div>
+
+    <input type="submit" value="Sign Up" class="btn btn-default">
+</form>
+
+
+
+{% endblock %}

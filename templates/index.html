@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Authors Section -->
+    <div class="col-md-8 mt-5">
+    
+        <h1 class="my-4">
+          <small>Authors:</small>
+        </h1>
+        {% for user in users %}
+        <!-- Blog Post -->
+        <div class="card my-4 mb-4">
+          
+          <div class="card-body my-4">
+            <a href="/blog?user={{ user.username }}">
+                <h2 class="card-title">Author: {{ user.username }}</h2>
+            </a>           
+          </div>
+
+        </div>
+        {% endfor %}
+    </div>
+        
+{% endblock %}    
