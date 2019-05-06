@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: black; position: z;">
         
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">t | s | Mc</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><h2 style="font-size: 1.25em;margin-bottom: 0px;">t | s | Mc</h2></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -68,32 +68,32 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/portfolio"><span style="color: #64a19d; font-style: italic;">creative</span></a>
+                        <span style="color: #64a19d; font-style: italic; font-size: .8em;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/portfolio">d | b create</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/">Blog | Authors</a>
+                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/">Blog | Authors</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/blog">Blog | Posts</a>
+                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/blog">Blog | Posts</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/login">Login</a>
+                       <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/login">Login</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a>
+                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a></span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/newpost">Blog | NewPost</a>
+                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/newpost">Blog | Newpost</a></span>
                     </li>
                     
                     {% if 'username' in session %}
         
                     <li class="navbar-item">
-                        <span class="nav-link js-scroll-trigger" style="color: #64a19d; font-style: italic;">{{ session['username'] }}</span>
+                        <span class="nav-link js-scroll-trigger" style="color: #64a19d; font-style: italic; font-size: .7em;margin-top: 42px;padding: 1rem .75rem;">||  {{ session['username'] }}</span>
                     </li>
-                    <li class="navbar-item" style="margin-top: 15px;">
+                    <li class="navbar-item" style="margin: 0px 15px;">
                         <form method="post" action="/logout">
-                            <button class="btn btn-primary js-scroll-trigger">Log Out</button>
+                            <button class="btn btn-primary js-scroll-trigger" style="padding: 1rem .75rem;margin-top: 40px;">Log Out</button>
                         </form>
                     </li>
         

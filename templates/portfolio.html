@@ -52,8 +52,10 @@
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
-            <h4>Shoreline</h4>
-            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+            <h4>text mining | 'token'</h4>
+            <p class="text-black-50 mb-0">here i intend to showcase a project where i will plug into the twitter api for a specific area and 
+              record and analyze the theme of the public discourse based on frequency of words and phrases employed.
+            </p>
           </div>
         </div>
       </div>
@@ -67,8 +69,10 @@
           <div class="bg-black text-center h-100 project">
             <div class="d-flex h-100">
               <div class="project-text w-100 my-auto text-center text-lg-left">
-                <h4 class="text-white">Misty</h4>
-                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                <h4 class="text-white">blogz</h4>
+                <p class="mb-0 text-white-50">here i will have a visible link with images representing the blog set up on this site to 
+                  accept new users and content.
+                </p>
                 <hr class="d-none d-lg-block mb-0 ml-0">
               </div>
             </div>
@@ -85,8 +89,10 @@
           <div class="bg-black text-center h-100 project">
             <div class="d-flex h-100">
               <div class="project-text w-100 my-auto text-center text-lg-right">
-                <h4 class="text-white">Mountains</h4>
-                <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                <h4 class="text-white">a | b | c</h4>
+                <p class="mb-0 text-white-50">here i will showcase design projects to provide the visitor with a glimpse 
+                  of the inter-disciplinary nature of my training and skill set. 
+                </p>
                 <hr class="d-none d-lg-block mb-0 mr-0">
               </div>
             </div>
@@ -106,8 +112,10 @@
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
-          <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+          <form class="form-inline d-flex" action="/portfolio" method="POST">
+            <!--<input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" placeholder="Enter email address..." name="visitor_email" value="{{ visitor_email }}">-->
+            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" name="visitor_email" placeholder="Enter email address..." type="email" value="{{ visitor_email }}"></input>
+            <span class="error">{{visitor_error}}</span>
             <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
           </form>
 

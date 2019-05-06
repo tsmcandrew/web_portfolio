@@ -2,13 +2,24 @@ from flask import Flask, request, redirect, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime 
 from hashutils import make_pw_hash, check_pw_hash, make_salt
+# from flask_mail import Mail, Message
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:blogz@localhost:8889/blogz'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://web_portfolio:portfolio@localhost:8889/web_portfolio'
 app.config['SQLALCHEMY_ECHO'] = True
 app.static_folder = 'static'
 db = SQLAlchemy(app)
+
+
+# app.config['MAIL_SERVER']='smtp.gmail.com'
+# app.config['MAIL_PORT']=465
+# app.config['MAIL_USERNAME']='timothy.sean.mcandrew@gmail.com'
+# app.config['MAIL_PASSWORD']='************'
+# app.config['MAIL_USE_TLS']=False
+# app.config['MAIL_USE_SSL']=True
+# mail = Mail(app)
+
 
 app.secret_key = 'y337kGcys&zP3B'
 
@@ -40,7 +51,14 @@ class User(db.Model):
         self.username = username
         self.pw_hash = make_pw_hash(password)
 
+class Visitor(db.Model):
 
+    id = db.Column(db.Integer, primary_key=True)
+    visitor_email = db.Column(db.String(120), unique=True)
+
+    def __init__(self, visitor_email):
+        self.visitor_email = visitor_email
+        
 @app.before_request
 def require_login():
     allowed_routes = ['login', 'signup', 'list_blogs', 'index', 'folio', 'static']
@@ -50,6 +68,21 @@ def require_login():
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def folio():
+    if request.method == ['POST']:
+        visitor_email = request.form['visitor_email']
+        new_visitor = Visitor(visitor_email)
+        db.session.add(new_visitor)
+        db.session.commit()
+        emails = Visitor.query.all()
+        existing_email = User.query.filter_by(visitor_email=visitor_email).all()
+        # if visitor_email == '':
+        #     flash('Oops! You forgot to input an email.', 'danger')
+        # elif visitor_email == existing_email: 
+        #     flash('Email already in subscription list. Thank You!', 'danger')
+            #title_error = 'Oops! You forgot to input a Title for your piece.'
+            #body_error = 'Oops! You forgot to jot down your next masterpiece.'
+
+        #    return render_template('portfolio.html', visitor_email=visitor_email)
     return render_template('portfolio.html')
 
 @app.route('/', methods=['GET', 'POST'])        
