@@ -74,7 +74,8 @@ def folio():
         db.session.add(new_visitor)
         db.session.commit()
         emails = Visitor.query.all()
-        existing_email = User.query.filter_by(visitor_email=visitor_email).all()
+        existing_email = User.query.filter_by(visitor_email=visitor_email).first()
+
         # if visitor_email == '':
         #     flash('Oops! You forgot to input an email.', 'danger')
         # elif visitor_email == existing_email: 
@@ -83,6 +84,8 @@ def folio():
             #body_error = 'Oops! You forgot to jot down your next masterpiece.'
 
         #    return render_template('portfolio.html', visitor_email=visitor_email)
+
+        return redirect('/')
     return render_template('portfolio.html')
 
 @app.route('/', methods=['GET', 'POST'])        
@@ -114,7 +117,12 @@ def signup():
         username = request.form['username']
         password = request.form['password']
         verify = request.form['verify']
-
+        visitor_email = request.form['visitor_email']
+        new_visitor = Visitor(visitor_email)
+        db.session.add(new_visitor)
+        db.session.commit()
+        emails = Visitor.query.all()
+        existing_email = Visitor.query.filter_by(visitor_email=visitor_email).first()
         # todo - validate user's data
 
         existing_user = User.query.filter_by(username=username).all()
@@ -141,6 +149,7 @@ def signup():
 
         elif username == existing_user: 
             flash('User already exists', 'danger')
+        
 
         elif not existing_user and password == verify:
             new_user = User(username, password)
@@ -149,6 +158,7 @@ def signup():
             session['username'] = username
             flash("Logged in", 'info')
             return redirect('/newpost')
+
       
     return render_template("signup.html") 
     

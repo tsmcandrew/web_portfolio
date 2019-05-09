@@ -63,13 +63,13 @@
     transition: background-color 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
-    padding: .5rem 0;
+    padding: .5rem 0rem;
     color: rgba(255,255,255,.8);
   }
   #mainNav .nav-link {
     -webkit-transition: none;
     transition: none;
-    padding: 2rem .75rem;
+    padding: 0rem 1.5rem;
     color: rgba(255,255,255);
   }
   #mainNav .nav-link:hover {

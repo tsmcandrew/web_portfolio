@@ -31,8 +31,8 @@
             </div>
             {% endfor %}
             
-    
-            <!-- Pagination -->
+            
+            <!-- Pagination 
             <ul class="pagination justify-content-center mb-4">
               <li class="page-item">
                 <a class="page-link" href="#">&larr; Older</a>
@@ -41,7 +41,7 @@
                 <a class="page-link" href="#">Newer &rarr;</a>
               </li>
             </ul>
-    
+            -->
           </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     <div class="row justify-content-center no-gutters mt-5 mb-5 mb-lg-0"> 
         <div class="col-lg-6 mx-auto bg-black">
         <div class="bg-black text-center">
-    <h3>Posts by {{ username }} {{user_id}}:</h1>
+    <!--<h3>Posts by {{ username }} {{user_id}}:</h3>-->
         {% if user_blogs|length == 0 %}
 
         <p>No blogs yet</p>
@@ -71,9 +71,8 @@
                                         
                     <h6> Blog Entry #: {{blog.id}} </h6>  
                     
-                    <h6> {{ blog.blog_body }} </h6>
-                    <br /> 
-                    <br />
+                    <h6> '{{ blog.blog_body }}' </h6>
+                    
                     <h6> Author: <a href='/blog?user={{ blog.owner.username }}'> {{ blog.owner.username }}</a></h6>
                     <h6> Post Date: {{ blog.blog_date }} </h6>
                 </li>

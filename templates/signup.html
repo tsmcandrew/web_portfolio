@@ -15,10 +15,27 @@
         <label for="verify">Verify Password</label>
         <input class="form-control" name="verify" type="password">
     </div>
+    <div id="signup" class="signup-section">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
 
-    <input type="submit" value="Sign Up" class="btn btn-default">
+            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+
+            
+                <!--<input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" placeholder="Enter email address..." name="visitor_email" value="{{ visitor_email }}">-->
+            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" name="visitor_email" placeholder="Enter email address..." type="text" value="{{ visitor_email }}"></input>
+                <!--<span class="error">{{visitor_error}}</span>-->
+                
+            
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <input type="submit" value="Sign Up" class="btn btn-default" style="background-color: #64a19d; color: white;margin-top:15px;">
 </form>
-
 
 
 {% endblock %}

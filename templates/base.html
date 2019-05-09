@@ -57,41 +57,44 @@
     
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: black; position: z;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: black; position: z; max-height: 640px;">
         
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><h2 style="font-size: 1.25em;margin-bottom: 0px;">t | s | Mc</h2></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    
                     Menu
-                    <i class="fas fa-bars"></i>
+        
+                    <i class="fas fa-hand-spock" style="margin-left: 2px;"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <span style="color: #64a19d; font-style: italic; font-size: .8em;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/portfolio">d | b create</a></span>
+                    <li class="nav-item" style="height: 50px;margin-bottom: 2px;">
+                        <span style="color: #64a19d; display:inline; font-style: italic; font-size: .8em;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/portfolio">d | b create</a></span>
                     </li>
-                    <li class="nav-item">
-                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/">Blog | Authors</a></span>
+                    <li class="nav-item" style="height: 40px;">
+                        <span style="font-size: .8em;display: inline;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/" >Blog | Authors</a></span>
                     </li>
-                    <li class="nav-item">
-                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/blog">Blog | Posts</a></span>
+                    <li class="nav-item" style="height: 40px;">
+                        <span style="font-size: .8em;display: inline;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/blog">Blog | Posts</a></span>
                     </li>
-                    <li class="nav-item">
-                       <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/login">Login</a></span>
+                    <li class="nav-item" style="height: 40px;">
+                        <span style="font-size: .8em;display: inline;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/login">Login</a></span>
                     </li>
-                    <li class="nav-item">
-                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a></span>
+                    <li class="nav-item" style="height: 40px;">
+                        <span style="font-size: .8em;display: inline;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/signup">Sign Up</a></span>
                     </li>
-                    <li class="nav-item">
-                        <span style="font-size: .8em;display: inline;padding: 1rem .75rem;"><a class="nav-link js-scroll-trigger" href="/newpost">Blog | Newpost</a></span>
+                    <li class="nav-item" style="height: 40px;">
+                        <span style="font-size: .8em;display: inline;padding: 0rem .75rem;"><a class="nav-link js-scroll-trigger" href="/newpost">Blog | Newpost</a></span>
                     </li>
                     
                     {% if 'username' in session %}
         
-                    <li class="navbar-item">
-                        <span class="nav-link js-scroll-trigger" style="color: #64a19d; font-style: italic; font-size: .7em;margin-top: 42px;padding: 1rem .75rem;">||  {{ session['username'] }}</span>
+                    <li class="navbar-item" style="height: 40px;">
+                        <i class="fas fa-book-reader mb-2 text-white" style="margin-top: 56px;margin-right: 0px; padding-right:0px; padding-left: 3px;"></i>
+                        <span class="nav-link js-scroll-trigger" style="color: #64a19d; font-style: italic; font-size: .7em;margin-top: 42px;padding: 1rem 0rem; display: inline;">{{ session['username'] }}</span>
                     </li>
-                    <li class="navbar-item" style="margin: 0px 15px;">
+                    <li class="navbar-item" style="margin: 0px 15px; padding-bottom: 34px;">
                         <form method="post" action="/logout">
                             <button class="btn btn-primary js-scroll-trigger" style="padding: 1rem .75rem;margin-top: 40px;">Log Out</button>
                         </form>
